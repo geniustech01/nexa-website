@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#721d35" />
+    <title>NEXA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-main">
+        <div class="brand-and-menu">
+          <button
+            class="icon-button menu-button"
+            id="menu-button"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="navigation-panel"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <a class="brand" href="#" aria-label="NEXA home">
+            <span class="brand-letter">N</span><span class="brand-letter">E</span><span class="brand-letter">X</span><span class="brand-letter">A</span><span class="brand-dot">.</span>
+          </a>
+        </div>
+
+        <label class="search-box" for="site-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8"></circle>
+            <path d="m16 16 4.5 4.5"></path>
+          </svg>
+          <input
+            id="site-search"
+            type="search"
+            placeholder="Search"
+            autocomplete="off"
+            aria-label="Search"
+          />
+        </label>
+
+        <div class="account-actions" id="account-actions">
+          <button class="login-button" id="login-button" type="button">Log in</button>
+          <button class="signup-button" id="signup-button" type="button">Sign up</button>
+        </div>
+
+        <div class="profile-area" id="profile-area">
+          <button
+            class="profile-button"
+            id="profile-button"
+            type="button"
+            aria-label="Open profile menu"
+            aria-expanded="false"
+          >
+            <img id="profile-image" alt="" hidden />
+            <span id="profile-initials">N</span>
+          </button>
+          <div class="profile-popover" id="profile-popover" hidden>
+            <div class="profile-preview" aria-label="Profile picture preview">
+              <img id="popover-profile-image" alt="Your profile picture" hidden />
+              <span id="popover-profile-initials">N</span>
+            </div>
+            <p class="profile-name" id="profile-name">Your profile</p>
+            <p class="profile-status" id="profile-status" role="status"></p>
+            <button class="change-photo-button" id="change-photo-button" type="button">
+              Upload a picture or avatar
+            </button>
+            <input id="profile-photo-input" type="file" accept="image/*" hidden />
+            <button class="logout-button" id="logout-button" type="button" hidden>Log out</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="navigation-backdrop" id="navigation-backdrop" hidden></div>
+      <nav
+        class="navigation-panel"
+        id="navigation-panel"
+        aria-label="Main navigation"
+        aria-hidden="true"
+      >
+        <div class="navigation-heading">
+          <span>Navigation</span>
+          <button
+            class="icon-button close-menu"
+            id="close-menu"
+            type="button"
+            aria-label="Close navigation"
+          >
+            &times;
+          </button>
+        </div>
+        <a href="#">Home</a>
+        <a href="#">Explore</a>
+        <a href="#">Collections</a>
+        <a href="#">About</a>
+      </nav>
+    </header>
+
+    <dialog class="account-dialog" id="account-dialog">
+      <form id="account-form">
+        <button
+          class="dialog-close"
+          id="dialog-close"
+          type="button"
+          aria-label="Close"
+        >
+          &times;
+        </button>
+        <p class="eyebrow" id="dialog-eyebrow">NEXA account</p>
+        <h1 id="dialog-title">Welcome back</h1>
+        <p class="dialog-description" id="dialog-description">Log in to your account.</p>
+        <label class="field-label" id="name-field" hidden>
+          Your name
+          <input id="name-input" name="name" autocomplete="name" />
+        </label>
+        <label class="field-label">
+          Email address
+          <input id="email-input" name="email" type="email" autocomplete="email" required />
+        </label>
+        <label class="field-label">
+          Password
+          <input
+            id="password-input"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            minlength="4"
+            required
+          />
+        </label>
+        <label class="field-label photo-field" id="photo-field" hidden>
+          Profile photo or avatar <span>(optional)</span>
+          <input id="photo-input" name="photo" type="file" accept="image/*" />
+        </label>
+        <p class="photo-status" id="photo-status" role="status"></p>
+        <button class="signup-button submit-button" id="submit-account" type="submit">
+          Log in
+        </button>
+        <p class="demo-note">Account actions are a local preview.</p>
+      </form>
+    </dialog>
+  </body>
+</html>
